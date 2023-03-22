@@ -13,7 +13,205 @@
 	</head>
 
 	<body>
-		<h1>hwfur</h1>
+		<!-- <div class="stats-card">
+			<div class="player-info">
+				<img src="player-image.jpg" alt="Player Image" />
+				<h2 class="player-name">Player Name</h2>
+				<ul class="player-stats">
+					<li>
+						<span class="stat-label">Goals: </span><span class="stat-value">15</span>
+					</li>
+					<li>
+						<span class="stat-label">Assists: </span><span class="stat-value">10</span>
+					</li>
+					<li>
+						<span class="stat-label">Games Played: </span
+						><span class="stat-value">20</span>
+					</li>
+				</ul>
+			</div>
+			<div class="player-dropdown">
+				<select>
+					<option value="player-1">Player 1</option>
+					<option value="player-2">Player 2</option>
+					<option value="player-3">Player 3</option>
+				</select>
+			</div>
+		</div> -->
+		<!-- <div class="stats-card">
+			<div class="stats-card__header">
+				<h2 class="stats-card__title">Player Name</h2>
+				<img class="stats-card__image" src="./img/assets/p2064.png" alt="Player Image" />
+			</div>
+			<div class="stats-card__body">
+				<ul class="stats-card__list">
+					<li>
+						<span class="stats-card__label">Goals</span>
+						<span class="stats-card__value stats-card__value--goals">10</span>
+					</li>
+					<li>
+						<span class="stats-card__label">Assists</span>
+						<span class="stats-card__value stats-card__value--assists">5</span>
+					</li>
+					<li>
+						<span class="stats-card__label">Games Played</span>
+						<span class="stats-card__value stats-card__value--games-played">20</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<ul class="player-list">
+			<li
+				class="player-list__item"
+				data-name="Player 1"
+				data-image="player1.jpg"
+				data-goals="10"
+				data-assists="5"
+				data-games-played="20"
+			>
+				Player 1
+			</li>
+			<li
+				class="player-list__item"
+				data-name="Player 2"
+				data-image="player2.jpg"
+				data-goals="20"
+				data-assists="10"
+				data-games-played="30"
+			>
+				Player 2
+			</li>
+			<li
+				class="player-list__item"
+				data-name="Player 3"
+				data-image="player3.jpg"
+				data-goals="5"
+				data-assists="2"
+				data-games-played="10"
+			>
+				Player 3
+			</li>
+		</ul> -->
+
+		<!-- //v2 -->
+		<!-- <div class="stats-card">
+			<div class="stats-card-header">
+				<img src="" alt="" class="stats-card-image" />
+				<h2 class="stats-card-title"></h2>
+			</div>
+			<div class="stats-card-body">
+				<ul class="stats-card-list">
+					<li class="stats-card-item">
+						<span class="stats-card-label">Goals:</span>
+						<span class="stats-card-value stats-card-value-goals"></span>
+					</li>
+					<li class="stats-card-item">
+						<span class="stats-card-label">Assists:</span>
+						<span class="stats-card-value stats-card-value-assists"></span>
+					</li>
+					<li class="stats-card-item">
+						<span class="stats-card-label">Games Played:</span>
+						<span class="stats-card-value stats-card-value-games"></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="player-list">
+			<ul>
+				<li
+					data-name="Lionel Messi"
+					data-image="player1.jpg"
+					data-goals="30"
+					data-assists="20"
+					data-games="35"
+				>
+					Lionel Messi
+				</li>
+				<li
+					data-name="Cristiano Ronaldo"
+					data-image="player2.jpg"
+					data-goals="25"
+					data-assists="15"
+					data-games="30"
+				>
+					Cristiano Ronaldo
+				</li>
+				<li
+					data-name="Neymar Jr."
+					data-image="player3.jpg"
+					data-goals="20"
+					data-assists="10"
+					data-games="25"
+				>
+					Neymar Jr.
+				</li>
+			</ul>
+		</div> -->
+
+		<!-- <div class="stat-card">
+			<h2>Select a player:</h2>
+			<div class="select-container">
+				<select id="player-select">
+					<option value="">-- Select a player --</option>
+					<option value="player1">Player 1</option>
+					<option value="player2">Player 2</option>
+					<option value="player3">Player 3</option>
+				</select>
+				<div class="select-arrow"></div>
+			</div>
+			<div class="stats">
+				<h3>Player Stats</h3>
+				<div class="stat">
+					<span class="stat-label">Points:</span>
+					<span class="stat-value" id="points"></span>
+				</div>
+				<div class="stat">
+					<span class="stat-label">Assists:</span>
+					<span class="stat-value" id="assists"></span>
+				</div>
+				<div class="stat">
+					<span class="stat-label">Rebounds:</span>
+					<span class="stat-value" id="rebounds"></span>
+				</div>
+			</div>
+		</div> -->
+		<div id="player-select">
+			<label for="player-list">Select a player:</label>
+			<select id="player-list">
+				<option value="player-1">Player 1</option>
+				<option value="player-2">Player 2</option>
+				<option value="player-3">Player 3</option>
+				<option value="player-4">Player 4</option>
+			</select>
+		</div>
+		<div id="stats-card">
+			<h2 id="player-name"></h2>
+			<div id="stats-container">
+				<div class="stat">
+					<div class="stat-label">Points</div>
+					<div class="stat-value" id="points"></div>
+				</div>
+				<div class="stat">
+					<div class="stat-label">Rebounds</div>
+					<div class="stat-value" id="rebounds"></div>
+				</div>
+				<div class="stat">
+					<div class="stat-label">Assists</div>
+					<div class="stat-value" id="assists"></div>
+				</div>
+				<div class="stat">
+					<div class="stat-label">Steals</div>
+					<div class="stat-value" id="steals"></div>
+				</div>
+				<div class="stat">
+					<div class="stat-label">Blocks</div>
+					<div class="stat-value" id="blocks"></div>
+				</div>
+			</div>
+		</div>
+
 		<script type="module" src="./src/app.js"></script>
 	</body>
 </html>

@@ -1,6 +1,73 @@
-.container {
-    margin: $layout-margin;
-    padding: $grid-gutter $grid-gutter 0 $grid-gutter;
-    @include border($colour-accent);
+.stat-card {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	width: 400px;
+	border: 1px solid #ccc;
+	padding: 20px;
+	box-sizing: border-box;
 }
 
+.stat-card h2 {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0;
+	margin-bottom: 10px;
+}
+
+.select-container {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.select-arrow {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translateY(-50%);
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 8px 6px 0 6px;
+	border-color: #666 transparent transparent transparent;
+	pointer-events: none;
+}
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	padding: 10px;
+	font-size: 16px;
+	width: 100%;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.stats {
+	border-top: 1px solid #ccc;
+	margin-top: 20px;
+	padding-top: 20px;
+}
+
+.stats h3 {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0;
+	margin-bottom: 10px;
+}
+
+.stat {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 5px;
+}
+
+.stat-label {
+	font-weight: bold;
+}
+
+.stat-value {
+	font-weight: normal;
+}
