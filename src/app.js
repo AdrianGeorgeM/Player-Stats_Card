@@ -41,3 +41,15 @@ function createImgElements() {
 	});
 }
 createImgElements();
+
+const select = document.getElementById('player-select');
+select.addEventListener('change', function () {
+	const selectedPlayer = this.value;
+	const statsContainer = getPlayers(playerData);
+	const { players } = statsContainer;
+	const playerStats = players.find((player) => player.player.id === selectedPlayer);
+	const { goals, assists, games } = playerStats.stats;
+	document.querySelector('.stats-card-value-goals').textContent = goals;
+	document.querySelector('.stats-card-value-assists').textContent = assists;
+	document.querySelector('.stats-card-value-games').textContent = games;
+});

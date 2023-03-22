@@ -177,7 +177,8 @@
 				</div>
 			</div>
 		</div> -->
-		<div id="player-select">
+
+		<!-- <div id="player-select">
 			<label for="player-list">Select a player:</label>
 			<select id="player-list">
 				<option value="player-1">Player 1</option>
@@ -210,7 +211,37 @@
 					<div class="stat-value" id="blocks"></div>
 				</div>
 			</div>
-		</div>
+		</div> -->
+	
+		<div class="stats-card">
+			<div class="stats-header">
+				<label for="player-select">Select a player:</label>
+				<select id="player-select">
+					<option value="player-1">Player 1</option>
+					<option value="player-2">Player 2</option>
+					<option value="player-3">Player 3</option>
+				</select>
+			</div>
+
+			
+			<div class="stats-card-body">
+				<ul class="stats-card-list">
+					<li class="stats-card-item">
+						<span class="stats-card-label">Goals:</span>
+						<span class="stats-card-value stats-card-value-goals"></span>
+					</li>
+					<li class="stats-card-item">
+						<span class="stats-card-label">Assists:</span>
+						<span class="stats-card-value stats-card-value-assists"></span>
+					</li>
+					<li class="stats-card-item">
+						<span class="stats-card-label">Games Played:</span>
+						<span class="stats-card-value stats-card-value-games"></span>
+					</li>
+				</ul>
+			</div>
+
+	
 
 		<script type="module" src="./src/app.js"></script>
 	</body>
