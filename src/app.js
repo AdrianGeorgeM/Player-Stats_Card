@@ -1,43 +1,66 @@
-import { getPlayers } from './utils.js';
-const playerData = require('../src/player-stats.json');
-const badges = require('../img/assets/badges_sprite.png');
-const dropdown = require('../img/assets/dropdown_icon.png');
+import {
+	loadJSON,
+	getStatValueByName,
+	calculatePassesPerMinute,
+	calculateGoalsPerMatch,
+	createImgElement,
+} from './utils.js';
 
-function dropDownCreate() {
-	const statsContainer = getPlayers(playerData);
-	const { players } = statsContainer;
-	console.log('players', players);
-	players.filter((player) => {
+const playerStatsUrl = '../src/player-stats.json';
+const playerSelector = document.getElementById('player-select');
+const playerImage = document.querySelector('.stats-card-image');
+const playerName = document.querySelector('.stats-card-title');
+const playerPosition = document.querySelector('.stats-card-subtitle');
+const apperances = document.getElementById('appearances');
+const goals = document.getElementById('goals');
+const assists = document.getElementById('assists');
+const goalsPerMatch = document.getElementById('goalsPerMatch');
+const assistsPerMatch = document.getElementById('passes');
+
+loadJSON(playerStatsUrl)
+	.then((response) => {
+		createPlayerDropdown(response);
+		playerSelector.addEventListener('change', () => {
+			const playerId = parseInt(playerSelector.value);
+			const selectedPlayer = response.find((player) => player.player.id === playerId);
+			updatePlayerStats(selectedPlayer);
+			createImgElement(response, playerId);
+		});
+	})
+	.catch((err) => {
+		console.error('Error fetching JSON: ', err);
+	});
+
+function createPlayerDropdown(players) {
+	players.forEach((player) => {
 		const {
 			player: {
-				name: { first: firstName, last: lastName },
+				name: { first, last },
 				id,
 			},
 		} = player;
-		const name = `${firstName} ${lastName}`;
-		const element = document.createElement('option');
-		element.textContent = name;
-		element.value = id;
-		console.log('element', element);
+		const name = `${first} ${last}`;
+		const option = document.createElement('option');
+		option.textContent = name;
+		option.value = id;
+		playerSelector.appendChild(option);
 	});
 }
-dropDownCreate();
 
-function createImgElements() {
-	const statsContainer = getPlayers(playerData);
-	const { players } = statsContainer;
-	players.filter((player) => {
-		const {
-			player: {
-				name: { first: firstName, last: lastName },
-				id,
-			},
-		} = player;
-		const name = `${firstName} ${lastName}`;
-		const element = document.createElement('img');
-		element.className = 'card__img';
-		element.src = `assets/p${id}.png`;
-		console.log('element', element);
-	});
+function updatePlayerStats(player) {
+	const {
+		player: {
+			name: { first, last },
+			info: { positionInfo },
+		},
+		stats,
+	} = player;
+
+	playerName.textContent = `${first} ${last}`;
+	playerPosition.textContent = positionInfo;
+	apperances.textContent = `${getStatValueByName(stats, 'appearances')}`;
+	goals.textContent = `${getStatValueByName(stats, 'goals')}`;
+	assists.textContent = `${getStatValueByName(stats, 'goal_assist')}`;
+	goalsPerMatch.textContent = `${calculateGoalsPerMatch(stats)}`;
+	assistsPerMatch.textContent = `${calculatePassesPerMinute(stats)}`;
 }
-createImgElements();
