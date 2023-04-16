@@ -8,7 +8,6 @@ I use plain HTML, CSS produced using SASS, and vanilla JS.
 
 Node.js installed on your computer.
 A package manager such as npm .
-I used npm pack to zip the project and send it to you.
 
 # Run application
 
