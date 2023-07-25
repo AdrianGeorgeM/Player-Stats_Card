@@ -8,7 +8,6 @@ import {
 
 const playerStatsUrl = '../src/player-stats.json';
 const playerSelector = document.getElementById('player-select');
-const playerImage = document.querySelector('.stats-card-image');
 const playerName = document.querySelector('.stats-card-title');
 const playerPosition = document.querySelector('.stats-card-subtitle');
 const apperances = document.getElementById('appearances');
